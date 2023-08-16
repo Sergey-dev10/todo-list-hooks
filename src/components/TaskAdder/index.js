@@ -1,1 +1,1 @@
-export * from "./TaskAdder.jsx";
+export * from "./TaskAdder";

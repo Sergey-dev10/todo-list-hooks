@@ -1,6 +1,8 @@
+import {useState} from "react";
 import {Title} from "../Title";
 import {TaskAdder} from "../TaskAdder";
-import {useState} from "react";
+import {TaskList} from "../TaskList/index.js";
+
 export const  Todo = () => {
     const [tasks, setTasks] = useState([
         {id: 1, title: "1 task"},
@@ -12,6 +14,7 @@ export const  Todo = () => {
         <>
             <Title />
             <TaskAdder />
+            <TaskList tasks={tasks}/>
         </>
     );
 }
