@@ -1,16 +1,19 @@
 import {Task} from "../Task";
-export const TaskList = ({tasks, onDeleteTask, onEditTask}) => {
+
+export const TaskList = ({tasks, onDeleteTask, onEditTask, onTaskCompletionToggle}) => {
     return (
         <div>
             {
                 tasks.map((task) => {
-                    const {id, title} = task;
-                   return <Task key={id}
-                                id={id}
-                                title={title}
-                                onDeleteTask={onDeleteTask}
-                                onEditTask={onEditTask}
-                   />;
+                    const {id, title, completed} = task;
+                    return <Task key={id}
+                                 id={id}
+                                 title={title}
+                                 completed={completed}
+                                 onDeleteTask={onDeleteTask}
+                                 onEditTask={onEditTask}
+                                 onTaskCompletionToggle={onTaskCompletionToggle}
+                    />;
                 })
             }
         </div>

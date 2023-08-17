@@ -6,14 +6,14 @@ import {nanoid} from "nanoid";
 
 export const  Todo = () => {
     const [tasks, setTasks] = useState([
-        {id: 1, title: "1 task"},
-        {id: 2, title: "2 task"},
-        {id: 3, title: "2 task"},
+        {id: 1, title: "1 task", completed: false},
+        {id: 2, title: "2 task", completed: false},
+        {id: 3, title: "3 task", completed: false},
     ]);
 
     const handleAddTask = (title) => {
         const id = nanoid();
-        setTasks((prevState) => [...prevState, {id, title}])
+        setTasks((prevState) => [...prevState, {id, title, completed: false}])
     };
     const handleDeleteTask = (id) => {
         setTasks(prevState => [...prevState.filter((task) => {
@@ -26,6 +26,13 @@ export const  Todo = () => {
         }));
     };
 
+    const handleTaskCompletionToggle = (id, completed) => {
+        console.log(completed);
+        setTasks(tasks.map((task) => {
+            return task.id === id ? {...task, completed}: task;
+        }));
+    };
+
     return (
         <>
             <Title />
@@ -33,6 +40,7 @@ export const  Todo = () => {
             <TaskList tasks={tasks}
                       onDeleteTask={handleDeleteTask}
                       onEditTask={handleEditTask}
+                      onTaskCompletionToggle={handleTaskCompletionToggle}
             />
         </>
     );

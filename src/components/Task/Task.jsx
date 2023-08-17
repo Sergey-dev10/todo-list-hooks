@@ -1,8 +1,14 @@
 import {useState} from "react";
 import {TaskEditor} from "../TaskEditor";
 
-export const Task = ({id, title, onDeleteTask, onEditTask}) => {
+export const Task = ({id,
+                         title,
+                         completed,
+                         onDeleteTask,
+                         onEditTask,
+                         onTaskCompletionToggle}) => {
     const [isEdit, setIsEdit] = useState(false);
+    const [isCompleted, setIsCompleted] = useState(completed);
     const handleDeleteTask = () => {
         onDeleteTask(id);
     };
@@ -14,13 +20,21 @@ export const Task = ({id, title, onDeleteTask, onEditTask}) => {
         setIsEdit(true);
     };
 
+    const handleTaskCompletionToggle = (e) => {
+        setIsCompleted(e.target.checked);
+        onTaskCompletionToggle(id, e.target.checked);
+    };
+
     return (
         <div>
             {
                 isEdit ? <TaskEditor title={title} onEditTask={handleEditTask}/> :
                     (
                         <p>
-                            <input type="checkbox" name="" />
+                            <input type="checkbox"
+                                   checked={isCompleted}
+                                   onChange={handleTaskCompletionToggle}
+                            />
                             <span>{title}</span>
                             <button onClick={handleEditBtn}>Edit</button>
                             <button onClick={handleDeleteTask}>Delete</button>
