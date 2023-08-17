@@ -2,6 +2,7 @@ import {useState} from "react";
 import {Title} from "../Title";
 import {TaskAdder} from "../TaskAdder";
 import {TaskList} from "../TaskList";
+import {ActionPanel} from "../ActionPanel";
 import {nanoid} from "nanoid";
 
 export const  Todo = () => {
@@ -10,6 +11,7 @@ export const  Todo = () => {
         {id: 2, title: "2 task", completed: false},
         {id: 3, title: "3 task", completed: false},
     ]);
+    const [filter, setFilter] = useState("All");
 
     const handleAddTask = (title) => {
         const id = nanoid();
@@ -33,15 +35,29 @@ export const  Todo = () => {
         }));
     };
 
+    const handleFilter = (filter) => {
+        setFilter(filter);
+    };
+
+    let handledTasks = [];
+    if (filter === "All") {
+        handledTasks = tasks;
+    } else if (filter === "Active") {
+        handledTasks = tasks.filter(task => task.completed === false);
+    } else if (filter === "Completed") {
+        handledTasks = tasks.filter(task => task.completed === true);
+    }
+
     return (
         <>
             <Title />
             <TaskAdder onAddTask={handleAddTask}/>
-            <TaskList tasks={tasks}
+            <TaskList tasks={handledTasks}
                       onDeleteTask={handleDeleteTask}
                       onEditTask={handleEditTask}
                       onTaskCompletionToggle={handleTaskCompletionToggle}
             />
+            <ActionPanel tasks={tasks} onHandleFilter={handleFilter}/>
         </>
     );
 }
