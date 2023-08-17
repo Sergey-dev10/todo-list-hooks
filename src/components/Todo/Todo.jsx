@@ -3,6 +3,7 @@ import {Title} from "../Title";
 import {TaskAdder} from "../TaskAdder";
 import {TaskList} from "../TaskList";
 import {ActionPanel} from "../ActionPanel";
+import {Search} from "../Search";
 import {nanoid} from "nanoid";
 
 export const  Todo = () => {
@@ -12,6 +13,8 @@ export const  Todo = () => {
         {id: 3, title: "3 task", completed: false},
     ]);
     const [filter, setFilter] = useState("All");
+    const [action, setAction] = useState("add");
+    const [searchText, setSearchText] = useState("");
 
     const handleAddTask = (title) => {
         const id = nanoid();
@@ -39,6 +42,14 @@ export const  Todo = () => {
         setFilter(filter);
     };
 
+    const handleToggleAction = (action) => {
+        setAction(action);
+    };
+
+    const handleSearch = (searchText) => {
+        setSearchText(searchText);
+    };
+
     let handledTasks = [];
     if (filter === "All") {
         handledTasks = tasks;
@@ -48,16 +59,26 @@ export const  Todo = () => {
         handledTasks = tasks.filter(task => task.completed === true);
     }
 
+    if (searchText) {
+        handledTasks = handledTasks.filter(task => task.title.indexOf(searchText) !== -1) ;
+    }
     return (
         <>
             <Title />
-            <TaskAdder onAddTask={handleAddTask}/>
+            {
+                action === "add" ? <TaskAdder onAddTask={handleAddTask}/> : <Search onHandleSearch={handleSearch}/>
+            }
+
             <TaskList tasks={handledTasks}
                       onDeleteTask={handleDeleteTask}
                       onEditTask={handleEditTask}
                       onTaskCompletionToggle={handleTaskCompletionToggle}
             />
-            <ActionPanel tasks={tasks} onHandleFilter={handleFilter}/>
+            <ActionPanel tasks={tasks}
+                         onHandleFilter={handleFilter}
+                         onHandleToggleAction={handleToggleAction}
+
+            />
         </>
     );
 }

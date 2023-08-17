@@ -1,10 +1,12 @@
 import {Info} from "../Info";
 import {Filter} from "../Filter";
-export const ActionPanel = ({tasks, onHandleFilter}) => {
+import {ToggleAddSearch} from "../ToggleAddSearch";
+export const ActionPanel = ({tasks, onHandleFilter, onHandleToggleAction}) => {
     return (
         <div>
-            <Info tasks={tasks}/>
-            <Filter onHandleFilter={onHandleFilter}/>
+            <ToggleAddSearch onHandleToggleAction={onHandleToggleAction}/>
+            <Info tasks={tasks} />
+            <Filter onHandleFilter={onHandleFilter} />
         </div>
     );
 };
