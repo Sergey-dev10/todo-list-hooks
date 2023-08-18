@@ -1,5 +1,6 @@
+import {TitleWrapper} from "./Title.styles.js";
 export const Title = () => {
     return (
-        <h1>To Do Tasks</h1>
+        <TitleWrapper>To Do Tasks</TitleWrapper>
     );
 }

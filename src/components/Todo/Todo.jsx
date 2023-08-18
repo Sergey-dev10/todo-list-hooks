@@ -5,7 +5,7 @@ import {TaskList} from "../TaskList";
 import {ActionPanel} from "../ActionPanel";
 import {Search} from "../Search";
 import {nanoid} from "nanoid";
-
+import {TodoWrapper} from "./Todo.styles.js";
 export const  Todo = () => {
     const [tasks, setTasks] = useState([
         {id: 1, title: "1 task", completed: false},
@@ -63,22 +63,23 @@ export const  Todo = () => {
         handledTasks = handledTasks.filter(task => task.title.indexOf(searchText) !== -1) ;
     }
     return (
-        <>
-            <Title />
-            {
-                action === "add" ? <TaskAdder onAddTask={handleAddTask}/> : <Search onHandleSearch={handleSearch}/>
-            }
+            <TodoWrapper>
+                <Title />
+                {
+                    action === "add" ? <TaskAdder onAddTask={handleAddTask}/> : <Search onHandleSearch={handleSearch}/>
+                }
 
-            <TaskList tasks={handledTasks}
-                      onDeleteTask={handleDeleteTask}
-                      onEditTask={handleEditTask}
-                      onTaskCompletionToggle={handleTaskCompletionToggle}
-            />
-            <ActionPanel tasks={tasks}
-                         onHandleFilter={handleFilter}
-                         onHandleToggleAction={handleToggleAction}
+                <TaskList tasks={handledTasks}
+                          onDeleteTask={handleDeleteTask}
+                          onEditTask={handleEditTask}
+                          onTaskCompletionToggle={handleTaskCompletionToggle}
+                />
+                <ActionPanel tasks={tasks}
+                             onHandleFilter={handleFilter}
+                             onHandleToggleAction={handleToggleAction}
 
-            />
-        </>
+                />
+            </TodoWrapper>
+
     );
 }

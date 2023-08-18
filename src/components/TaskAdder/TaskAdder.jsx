@@ -1,4 +1,5 @@
 import {useState} from "react";
+import {FormWrapper, InputWrapper} from "./TaskAdder.styles.js";
 
 export const TaskAdder = ({onAddTask}) => {
   const [task, setTask] = useState("");
@@ -12,15 +13,13 @@ export const TaskAdder = ({onAddTask}) => {
       setTask("");
   };
     return (
-        <div>
-            <form onSubmit={handleSubmit}>
-                <input type="text"
+
+            <FormWrapper onSubmit={handleSubmit}>
+                <InputWrapper type="text"
                        placeholder="Add new task"
                        value={task}
                        onChange={handleInputChange}
                 />
-                <button>Add</button>
-            </form>
-        </div>
+            </FormWrapper>
     );
 }
