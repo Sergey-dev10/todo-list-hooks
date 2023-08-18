@@ -5,8 +5,8 @@ export const FormWrapper = styled.form`
   justify-content: center;
 `;
 export const InputWrapper = styled.input`
-  width: 80%;
-  padding: 0.2rem 0.7rem;
+  width: 90%;
+  padding: 0.2rem 0.5rem;
   height: 1.8rem;
   border: 1px solid #cccc;
 
