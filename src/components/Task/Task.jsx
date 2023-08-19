@@ -1,6 +1,8 @@
 import {useState} from "react";
 import {TaskEditor} from "../TaskEditor";
-
+import {FaEdit} from "react-icons/fa";
+import {AiFillDelete} from "react-icons/ai";
+import {TaskWrapper, TaskItem, Button, ButtonsWrapper, Title} from "./Task.styles.js";
 export const Task = ({id,
                          title,
                          completed,
@@ -13,7 +15,11 @@ export const Task = ({id,
         onDeleteTask(id);
     };
     const handleEditTask = (title) => {
-        onEditTask(id, title)
+        onEditTask(id, title);
+        setIsEdit(false);
+    };
+
+    const handleReturnBack = () => {
         setIsEdit(false);
     };
     const handleEditBtn = () => {
@@ -26,22 +32,27 @@ export const Task = ({id,
     };
 
     return (
-        <div>
+        <TaskWrapper>
             {
-                isEdit ? <TaskEditor title={title} onEditTask={handleEditTask}/> :
+                isEdit ? <TaskEditor title={title}
+                                     onEditTask={handleEditTask}
+                                     onReturnBack={handleReturnBack}
+                    /> :
                     (
-                        <p>
+                        <TaskItem>
                             <input type="checkbox"
                                    checked={isCompleted}
                                    onChange={handleTaskCompletionToggle}
                             />
-                            <span>{title}</span>
-                            <button onClick={handleEditBtn}>Edit</button>
-                            <button onClick={handleDeleteTask}>Delete</button>
-                        </p>
+                            <Title>{title}</Title>
+                            <ButtonsWrapper>
+                                <Button onClick={handleEditBtn}><FaEdit/></Button>
+                                <Button onClick={handleDeleteTask}><AiFillDelete/></Button>
+                            </ButtonsWrapper>
+                        </TaskItem>
                     )
             }
 
-        </div>
+        </TaskWrapper>
     );
 }

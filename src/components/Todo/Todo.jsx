@@ -64,21 +64,20 @@ export const  Todo = () => {
     }
     return (
             <TodoWrapper>
-                <Title />
-                {
-                    action === "add" ? <TaskAdder onAddTask={handleAddTask}/> : <Search onHandleSearch={handleSearch}/>
-                }
+                    <Title />
+                    {
+                        action === "add" ? <TaskAdder onAddTask={handleAddTask}/> : <Search onHandleSearch={handleSearch}/>
+                    }
 
-                <TaskList tasks={handledTasks}
-                          onDeleteTask={handleDeleteTask}
-                          onEditTask={handleEditTask}
-                          onTaskCompletionToggle={handleTaskCompletionToggle}
-                />
-                <ActionPanel tasks={tasks}
-                             onHandleFilter={handleFilter}
-                             onHandleToggleAction={handleToggleAction}
-
-                />
+                    <TaskList tasks={handledTasks}
+                              onDeleteTask={handleDeleteTask}
+                              onEditTask={handleEditTask}
+                              onTaskCompletionToggle={handleTaskCompletionToggle}
+                    />
+                    <ActionPanel tasks={tasks}
+                                 onHandleFilter={handleFilter}
+                                 onHandleToggleAction={handleToggleAction}
+                    />
             </TodoWrapper>
 
     );
