@@ -32,7 +32,6 @@ export const  Todo = () => {
     };
 
     const handleTaskCompletionToggle = (id, completed) => {
-        console.log(completed);
         setTasks(tasks.map((task) => {
             return task.id === id ? {...task, completed}: task;
         }));

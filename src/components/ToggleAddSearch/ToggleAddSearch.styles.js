@@ -9,5 +9,5 @@ export const Button = styled.button`
   background: none;
   border: none;
   font-size: 1.1rem;
-  color: ${props => props.isActive ? "#000000" : "#5e5555"};
+  color: ${({$isActive}) => $isActive ? "#000000" : "#5e5555"};
 `;

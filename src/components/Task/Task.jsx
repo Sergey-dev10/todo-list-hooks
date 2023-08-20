@@ -44,7 +44,7 @@ export const Task = ({id,
                                    checked={isCompleted}
                                    onChange={handleTaskCompletionToggle}
                             />
-                            <Title>{title}</Title>
+                            <Title $isCompleted={isCompleted}>{title}</Title>
                             <ButtonsWrapper>
                                 <Button onClick={handleEditBtn}><FaEdit/></Button>
                                 <Button onClick={handleDeleteTask}><AiFillDelete/></Button>

@@ -1,3 +1,9 @@
+import {MessageWrapper, Message} from "./NoTasksMessage.styles.js";
+
 export const NoTasksMessage = () => {
-    return <p>There are no tasks.</p>;
+    return (
+        <MessageWrapper>
+            <Message>There are no tasks.</Message>
+        </MessageWrapper>
+    );
 };
