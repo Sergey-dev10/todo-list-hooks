@@ -4,6 +4,7 @@ export const FilterWrapper = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  margin-left: auto;
 `;
 export const Button = styled.button`
   margin: 3px;

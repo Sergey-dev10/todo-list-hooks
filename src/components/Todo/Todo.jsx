@@ -1,4 +1,4 @@
-import {useState} from "react";
+import {useEffect, useState} from "react";
 import {Title} from "../Title";
 import {TaskAdder} from "../TaskAdder";
 import {TaskList} from "../TaskList";
@@ -8,9 +8,9 @@ import {nanoid} from "nanoid";
 import {TodoWrapper} from "./Todo.styles.js";
 export const  Todo = () => {
     const [tasks, setTasks] = useState([
-        {id: 1, title: "1 task", completed: false},
-        {id: 2, title: "2 task", completed: false},
-        {id: 3, title: "3 task", completed: false},
+        // {id: 1, title: "1 task", completed: false},
+        // {id: 2, title: "2 task", completed: false},
+        // {id: 3, title: "3 task", completed: false},
     ]);
     const [filter, setFilter] = useState("All");
     const [action, setAction] = useState("add");
@@ -49,6 +49,7 @@ export const  Todo = () => {
         setSearchText(searchText);
     };
 
+
     let handledTasks = [];
     if (filter === "All") {
         handledTasks = tasks;
@@ -61,6 +62,20 @@ export const  Todo = () => {
     if (searchText) {
         handledTasks = handledTasks.filter(task => task.title.indexOf(searchText) !== -1) ;
     }
+
+    useEffect(() => {
+        const storedTasks = localStorage.getItem("tasks");
+        if (storedTasks) {
+            setTasks(JSON.parse(storedTasks));
+        }
+    }, []);
+
+    useEffect(() => {
+        if (tasks.length) {
+            localStorage.setItem("tasks", JSON.stringify(tasks));
+        }
+    }, [tasks]);
+
     return (
             <TodoWrapper>
                     <Title />
