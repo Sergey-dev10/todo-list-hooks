@@ -11,7 +11,11 @@ export const TaskEditor  = ({title, onEditTask, onReturnBack}) => {
         steNewTitle(e.target.value);
     };
     const handleSaveNewTitle = () => {
-        onEditTask(newTitle);
+        let title = newTitle.trim()
+        if (title) {
+            steNewTitle(title);
+            onEditTask(title);
+        }
     };
 
     const handleReturnBack = () => {

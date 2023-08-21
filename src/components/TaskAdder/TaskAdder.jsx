@@ -9,7 +9,7 @@ export const TaskAdder = ({onAddTask}) => {
   };
   const handleSubmit = (e) => {
       e.preventDefault();
-      if (task.trim()) {
+      if (task) {
           onAddTask(task);
       }
       setTask("");
