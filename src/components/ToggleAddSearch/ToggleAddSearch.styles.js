@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import {device} from "../../common/devices.js";
+import {Btn} from "../../common/CommonStyles.styles.js";
 
 export const ButtonWrapper = styled.div`
   margin-right: 1rem;
@@ -9,9 +10,6 @@ export const ButtonWrapper = styled.div`
     border-right: none;
   }
 `;
-export const Button = styled.button`
-  background: none;
-  border: none;
-  font-size: 1.1rem;
+export const Button = styled(Btn)`
   color: ${({$isActive}) => $isActive ? "#000000" : "#5e5555"};
 `;

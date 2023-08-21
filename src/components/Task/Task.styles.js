@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import {device} from "../../common/devices.js";
-
+import {Btn} from "../../common/CommonStyles.styles.js"
 
 export const TaskWrapper = styled.div`
   display: flex;
@@ -28,10 +28,7 @@ export const Title = styled.p`
     margin-left: 0.1rem;
   }
 `;
-export const Button = styled.button`
-  background: none;
-  border: none;
-  font-size: 1.1rem;
+export const Button = styled(Btn)`
   @media ${device.tablet} {
     padding: 0.2rem
   }

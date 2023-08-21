@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import {device} from "../../common/devices.js";
+import {Btn} from "../../common/CommonStyles.styles.js";
 
 export const TaskEditorWrapper = styled.div`
   display: flex;
@@ -7,10 +8,7 @@ export const TaskEditorWrapper = styled.div`
   width: 95%;
 
 `;
-export const Button = styled.button`
-  background: none;
-  border: none;
-  font-size: 1.1rem;
+export const Button = styled(Btn)`
   @media ${device.tablet} {
     padding: 0.2rem
   }

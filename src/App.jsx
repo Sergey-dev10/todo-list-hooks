@@ -1,11 +1,11 @@
 import {Todo} from "./components/Todo";
-import {GlobalStyles} from "./GlobalStyles.styles.js";
+import {CommonStyles} from "./common/CommonStyles.styles.js";
 function App() {
 
   return (
     <>
       <Todo />
-      <GlobalStyles/>
+      <CommonStyles/>
     </>
   );
 }
