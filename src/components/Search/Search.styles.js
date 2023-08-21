@@ -1,4 +1,5 @@
-import styled from "styled-components";
+import styled from "styled-components"
+import {device} from "../../common/devices.js";
 
 export const FormWrapper = styled.form`
   display: flex;
@@ -9,6 +10,12 @@ export const InputWrapper = styled.input`
   padding: 0.2rem 0.5rem;
   height: 1.8rem;
   border: 1px solid #cccccc;
+  @media ${device.tablet} {
+    width: 83%;
+  }
+  @media ${device.mobileS} {
+    width: 80%;
+  }
 
   &:focus {
     border-color: #66afe9;

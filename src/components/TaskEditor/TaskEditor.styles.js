@@ -1,15 +1,19 @@
 import styled from "styled-components";
+import {device} from "../../common/devices.js";
 
 export const TaskEditorWrapper = styled.div`
   display: flex;
   align-items: flex-end;
   width: 95%;
+
 `;
 export const Button = styled.button`
-  margin-left: auto;
   background: none;
   border: none;
   font-size: 1.1rem;
+  @media ${device.tablet} {
+    padding: 0.2rem
+  }
 `;
 
 export const Input = styled.input`
@@ -18,8 +22,7 @@ export const Input = styled.input`
   padding-left: 0.5rem;
   height: 1.8rem;
   border: 1px solid #cccccc;
-  word-wrap: break-word;
-
+ 
   &:focus {
     border-color: #66afe9;
     outline: 0;
@@ -28,4 +31,7 @@ export const Input = styled.input`
 
 export const ButtonsWrapper = styled.div`
     margin-left: auto;
+    @media ${device.tablet} {  
+      display: flex;
+    }
 `;
