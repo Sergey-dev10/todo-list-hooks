@@ -5,11 +5,13 @@ export const TaskAdder = ({onAddTask}) => {
   const [task, setTask] = useState("");
 
   const handleInputChange = (e) => {
-      setTask(e.target.value);
+          setTask(e.target.value);
   };
   const handleSubmit = (e) => {
       e.preventDefault();
-      onAddTask(task);
+      if (task.trim()) {
+          onAddTask(task);
+      }
       setTask("");
   };
     return (
