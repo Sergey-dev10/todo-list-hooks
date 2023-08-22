@@ -13,7 +13,7 @@ export const TodoWrapper = styled.div`
     height: 100vh;
     margin: 0;
     overflow: auto;
-    max-height: 100vh;
+    
 
   }
  
