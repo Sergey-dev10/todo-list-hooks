@@ -26,11 +26,13 @@ export const Title = styled.p`
   @media ${device.tablet} {
     width: 40%;
     margin-left: 0.1rem;
+    font-size: 1.5rem;
   }
 `;
 export const Button = styled(Btn)`
   @media ${device.tablet} {
-    padding: 0.2rem
+    padding: 0.2rem;
+    font-size: 1.5rem;
   }
 `;
 export const ButtonsWrapper = styled.div`

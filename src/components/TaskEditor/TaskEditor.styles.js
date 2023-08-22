@@ -10,7 +10,8 @@ export const TaskEditorWrapper = styled.div`
 `;
 export const Button = styled(Btn)`
   @media ${device.tablet} {
-    padding: 0.2rem
+    padding: 0.2rem;
+    font-size: 1.5rem;
   }
 `;
 

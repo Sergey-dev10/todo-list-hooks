@@ -12,4 +12,8 @@ export const ButtonWrapper = styled.div`
 `;
 export const Button = styled(Btn)`
   color: ${({$isActive}) => $isActive ? "#000000" : "#5e5555"};
+  @media ${device.tablet} {
+    font-size: 2rem;  
+  }
+  
 `;

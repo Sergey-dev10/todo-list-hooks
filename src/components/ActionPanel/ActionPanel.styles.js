@@ -10,7 +10,9 @@ export const ActionPanelWrapper = styled.div`
   background-color: #e8e2ca;
   @media ${device.tablet} {
     flex-direction: column;
-    padding: 0.5rem 0;
+    margin-top: auto;
+    padding: 1rem 0;
+    font-size: 2rem;
   }
 `;
 
