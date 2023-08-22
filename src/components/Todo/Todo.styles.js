@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import {device} from "../../common/devices.js";
+import { device } from "../../common/devices.js";
 export const TodoWrapper = styled.div`
   width: 40%;
   margin: 10% auto;
@@ -13,8 +13,5 @@ export const TodoWrapper = styled.div`
     height: 100vh;
     margin: 0;
     overflow: auto;
-    
-
   }
- 
 `;

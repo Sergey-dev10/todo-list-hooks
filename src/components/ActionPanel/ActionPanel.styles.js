@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import {device} from "../../common/devices.js";
+import { device } from "../../common/devices.js";
 
 export const ActionPanelWrapper = styled.div`
   display: flex;
@@ -15,4 +15,3 @@ export const ActionPanelWrapper = styled.div`
     font-size: 2rem;
   }
 `;
-

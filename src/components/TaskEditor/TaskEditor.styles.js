@@ -1,12 +1,11 @@
 import styled from "styled-components";
-import {device} from "../../common/devices.js";
-import {Btn} from "../../common/CommonStyles.styles.js";
+import { device } from "../../common/devices.js";
+import { Btn } from "../../common/CommonStyles.styles.js";
 
 export const TaskEditorWrapper = styled.div`
   display: flex;
   align-items: flex-end;
   width: 95%;
-
 `;
 export const Button = styled(Btn)`
   @media ${device.tablet} {
@@ -29,8 +28,8 @@ export const Input = styled.input`
 `;
 
 export const ButtonsWrapper = styled.div`
-    margin-left: auto;
-    @media ${device.tablet} {  
-      display: flex;
-    }
+  margin-left: auto;
+  @media ${device.tablet} {
+    display: flex;
+  }
 `;

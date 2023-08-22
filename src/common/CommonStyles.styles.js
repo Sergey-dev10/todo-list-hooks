@@ -1,5 +1,5 @@
-import styled, { createGlobalStyle } from 'styled-components'
-import {device} from "./devices.js";
+import styled, { createGlobalStyle } from "styled-components";
+import { device } from "./devices.js";
 
 export const CommonStyles = createGlobalStyle`
   html {

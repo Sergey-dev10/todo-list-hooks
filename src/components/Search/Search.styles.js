@@ -1,5 +1,5 @@
-import styled from "styled-components"
-import {device} from "../../common/devices.js";
+import styled from "styled-components";
+import { device } from "../../common/devices.js";
 
 export const FormWrapper = styled.form`
   display: flex;
@@ -20,6 +20,8 @@ export const InputWrapper = styled.input`
   &:focus {
     border-color: #66afe9;
     outline: 0;
-    box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102,175,233,.6);
+    box-shadow:
+      inset 0 1px 1px rgba(0, 0, 0, 0.075),
+      0 0 8px rgba(102, 175, 233, 0.6);
   }
 `;

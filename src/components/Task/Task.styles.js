@@ -1,6 +1,6 @@
 import styled from "styled-components";
-import {device} from "../../common/devices.js";
-import {Btn} from "../../common/CommonStyles.styles.js"
+import { device } from "../../common/devices.js";
+import { Btn } from "../../common/CommonStyles.styles.js";
 
 export const TaskWrapper = styled.div`
   display: flex;
@@ -22,7 +22,8 @@ export const Title = styled.p`
   width: 15rem;
   margin-left: 0.5rem;
   word-wrap: break-word;
-  text-decoration: ${({$isCompleted}) => $isCompleted ? "line-through" : "none"};
+  text-decoration: ${({ $isCompleted }) =>
+    $isCompleted ? "line-through" : "none"};
   @media ${device.tablet} {
     width: 40%;
     margin-left: 0.1rem;
@@ -36,8 +37,8 @@ export const Button = styled(Btn)`
   }
 `;
 export const ButtonsWrapper = styled.div`
-    margin-left: auto;
-    @media ${device.tablet} {
-      display: flex;
-    }
+  margin-left: auto;
+  @media ${device.tablet} {
+    display: flex;
+  }
 `;
