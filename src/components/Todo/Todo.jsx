@@ -42,6 +42,9 @@ export const  Todo = () => {
     };
 
     const handleToggleAction = (action) => {
+        if (action === "add") {
+            setSearchText("");
+        }
         setAction(action);
     };
 
